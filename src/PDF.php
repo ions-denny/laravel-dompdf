@@ -141,10 +141,15 @@ class PDF{
      *
      * @return string The rendered PDF as string
      */
-    public function output(){
+    public function output($password="){
         if(!$this->rendered){
             $this->render();
         }
+        
+        if(!empty($password)){
+           $this->dompdf->get_canvas()->get_cpdf()->setEncryption($password);
+        }
+
         return $this->dompdf->output();
     }
 
