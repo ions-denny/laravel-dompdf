@@ -141,7 +141,7 @@ class PDF{
      *
      * @return string The rendered PDF as string
      */
-    public function output($password="){
+    public function output($password=""){
         if(!$this->rendered){
             $this->render();
         }
